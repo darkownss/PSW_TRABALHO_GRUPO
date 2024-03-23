@@ -1,8 +1,8 @@
 import React from 'react';
 import './scss/main.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-import Home from './home/home';
-import Header from './Header/header';
+import Home from './components/home/home.js';
+import Header from './components/Header/header.js';
 
 function App() {
   return (
