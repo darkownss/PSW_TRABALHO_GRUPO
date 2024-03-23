@@ -22,7 +22,7 @@ function Home() {
                                 <div class="col-md-4 d-flex">
                                     <div class="card">
                                         <img class="card-img-top" src={food} alt=""></img>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between align-items-stretch">
                                             <h5 class="card-title">{item.nome}</h5>
                                             <p class="card-text">{item.descricao}</p>
                                             <div class="d-flex justify-content-between align-items-center">
