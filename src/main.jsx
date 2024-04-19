@@ -19,6 +19,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Usuario from './pages/Usuario.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path:"admin",
     element:<Admin_Page/>,
+  },
+  {
+    path:"info",
+    element:<Usuario/>,
   }
 ]);
 

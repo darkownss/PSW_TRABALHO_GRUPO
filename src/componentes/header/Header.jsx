@@ -33,8 +33,7 @@ const Header = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
+                    <div className="collapse navbar-collapse flex-row-reverse d-flex navbar-nav" id="navbarNavAltMarkup">
                             {isAdmin ? 
                             <>   
                             
@@ -50,12 +49,21 @@ const Header = () => {
                                 <span className='m-2'>Home</span>
 
                             </Link>
-                            <div className='pt-2' style={{cursor:"pointer"}}>
-                               <svg fill="#000000" height="25px" width="25px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.642 20.669c-0.391 0.39-0.391 1.023-0 1.414 0.195 0.195 0.451 0.293 0.707 0.293s0.512-0.098 0.707-0.293l5.907-6.063-5.907-6.063c-0.39-0.39-1.023-0.39-1.414 0s-0.391 1.024 0 1.414l3.617 3.617h-19.264c-0.552 0-1 0.448-1 1s0.448 1 1 1h19.326zM30.005 0h-18c-1.105 0-2.001 0.895-2.001 2v9h2.014v-7.78c0-0.668 0.542-1.21 1.21-1.21h15.522c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-15.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.014 0.003v9.030c0 1.105 0.896 2 2.001 2h18c1.105 0 2-0.895 2-2v-28c-0.001-1.105-0.896-2-2-2z"></path> </g></svg>
-                                {currentUser ? (<span className='m-2' onClick={handleDeslogar}>Deslogar</span>) :(<span className='m-2' onClick = {handleLogin}>Login</span>) }
+                            <div className='d-flex' style={{cursor:"pointer"}}>
+                               <svg className = 'mt-3 pl-2' fill="#000000" height="25px" width="25px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier"> 
+                                <path d="M16.642 20.669c-0.391 0.39-0.391 1.023-0 1.414 0.195 0.195 0.451 0.293 0.707 0.293s0.512-0.098 0.707-0.293l5.907-6.063-5.907-6.063c-0.39-0.39-1.023-0.39-1.414 0s-0.391 1.024 0 1.414l3.617 3.617h-19.264c-0.552 0-1 0.448-1 1s0.448 1 1 1h19.326zM30.005 0h-18c-1.105 0-2.001 0.895-2.001 2v9h2.014v-7.78c0-0.668 0.542-1.21 1.21-1.21h15.522c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-15.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.014 0.003v9.030c0 1.105 0.896 2 2.001 2h18c1.105 0 2-0.895 2-2v-28c-0.001-1.105-0.896-2-2-2z"></path> </g></svg>
+                                {currentUser ? (<>
+                                                    <span className='m-2 pt-2' onClick={handleDeslogar}>Deslogar</span>
+                                                    <Link to = "/info" className='nav-link'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-person-fill m-2" viewBox="0 0 16 16">
+                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                                    </svg><span className=''>Usuário</span>
+                                                    </Link></>) 
+                                                    :(<span className='m-2' onClick = {handleLogin}>Login</span>) }
                             </div> 
 
-                            
                             <Link to="/pedido" className="nav-link">
                                 <svg fill="#000000" width="25px" height="25px" viewBox="0 -0.5 122.88 122.88"
                                     version="1.1"
@@ -65,9 +73,7 @@ const Header = () => {
                                 <span className='m-2'>Pedidos</span>
                             </Link>
                         </div>
-                    </div>
                 </nav>
-
             </header>
         </>
     )
